@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <button id="theme-toggle" class="theme-btn">
+    🌙 Dark Mode
+    </button>
+    <div class="container">
+        <h2>Edit Task</h2>
+
+        <form method="POST" class="edit-form">
+            <input type="text" name="task" value="{{ task[0] }}" required>
+            <button type="submit">Update</button>
+        </form>
+
+        <a href="{{ url_for('home') }}" class="back-link">Cancel</a>
+    </div>
+
+</body>
+</html>
