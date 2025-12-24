@@ -43,7 +43,7 @@ python app.py
 ## Open in browser using
 http://127.0.0.1:5000
 
-##Dark Mode
+## Dark Mode
 The app includes a dark mode toggle.
 The selected theme is saved using localStorage and persists across sessions.
 
