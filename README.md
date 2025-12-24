@@ -34,22 +34,6 @@ This project is being developed step by step to learn how frontend and backend w
 
 ---
 
-## Project Structure
-TaskManagerProject/
-│
-├── app.py
-├── tasks.db
-├── README.md
-├── static/
-│ └── css/
-│ └── style.css
-│
-├── templates/
-│ ├── home.html
-│ └── edit.html
-│
-└── venv/
-
 ## Install depedencies
 pip install flask
 
