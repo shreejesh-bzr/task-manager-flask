@@ -167,3 +167,27 @@ body.dark .theme-btn {
     background: #e0e0e0;
     color: #121212;
 }
+
+/* Task item card */
+.task-item {
+    background: #ffffff;
+    color: #222222;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Task text */
+.task-text {
+    flex: 1;
+    margin-left: 10px;
+}
+
+/* Dark mode task card */
+body.dark .task-item {
+    background: #1e1e1e;
+    color: #f1f1f1;
+}
