@@ -21,23 +21,22 @@
     <h2>Tasks:</h2>
     <ul>
     {% for task in tasks %}
-    <li>
-        <form action="{{ url_for('toggle_task', task_id=task[0]) }}" method="POST" style="display:inline;">
-            <input type="checkbox" onchange="this.form.submit()" {% if task[2] %}checked{% endif %}>
-        </form>
+    <li class="task-item">
+    <form action="{{ url_for('toggle_task', task_id=task[0]) }}" method="POST">
+        <input type="checkbox"
+               onchange="this.form.submit()"
+               {% if task[2] %}checked{% endif %}>
+    </form>
 
-        <span {% if task[2] %}style="text-decoration: line-through; color: gray;"{% endif %}>
-            {{ task[1] }}
-        </span>
+    <span class="task-text"
+          {% if task[2] %}style="text-decoration: line-through; opacity:0.6;"{% endif %}>
+        {{ task[1] }}
+    </span>
 
-        <a href="{{ url_for('edit_task', task_id=task[0]) }}" style="margin-left:10px;">
-            ✏️
-        </a>
-
-        <a href="{{ url_for('delete_task', task_id=task[0]) }}" style="color:red; margin-left:10px;">
-            ❌
-        </a>
+    <a href="{{ url_for('edit_task', task_id=task[0]) }}">✏️</a>
+    <a href="{{ url_for('delete_task', task_id=task[0]) }}" style="color:#ff4d4d;">❌</a>
     </li>
+
     {% endfor %}
     </ul>
     <script>
