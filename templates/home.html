@@ -7,6 +7,7 @@
     <title>Task Manager</title>
 </head>
 <body>
+    <div class="app-container">
     <h1>Welcome to Your Task Manager!</h1>
     <button id="theme-toggle" class="theme-btn">
     🌙 Dark Mode
@@ -21,21 +22,25 @@
     <h2>Tasks:</h2>
     <ul>
     {% for task in tasks %}
-    <li class="task-item">
-    <form action="{{ url_for('toggle_task', task_id=task[0]) }}" method="POST">
-        <input type="checkbox"
-               onchange="this.form.submit()"
-               {% if task[2] %}checked{% endif %}>
-    </form>
+    <li class="task-card">
+    <div class="task-left">
+        <form action="{{ url_for('toggle_task', task_id=task[0]) }}" method="POST">
+            <input type="checkbox"
+                   onchange="this.form.submit()"
+                   {% if task[2] %}checked{% endif %}>
+        </form>
 
-    <span class="task-text"
-          {% if task[2] %}style="text-decoration: line-through; opacity:0.6;"{% endif %}>
-        {{ task[1] }}
-    </span>
+        <span class="task-text {% if task[2] %}done{% endif %}">
+            {{ task[1] }}
+        </span>
+    </div>
 
-    <a href="{{ url_for('edit_task', task_id=task[0]) }}">✏️</a>
-    <a href="{{ url_for('delete_task', task_id=task[0]) }}" style="color:#ff4d4d;">❌</a>
+    <div class="task-actions">
+        <a href="{{ url_for('edit_task', task_id=task[0]) }}" title="Edit">✏️</a>
+        <a href="{{ url_for('delete_task', task_id=task[0]) }}" title="Delete">🗑️</a>
+    </div>
     </li>
+
 
     {% endfor %}
     </ul>
@@ -57,5 +62,6 @@
     });
     </script>
 
+    </div>
 </body>
 </html>
