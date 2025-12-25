@@ -1,11 +1,45 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+    background: #f2f4f8;
+    color: #222;
+
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+
+    transition: background 0.3s, color 0.3s;
+}
+
+body {
+    background: #f4f6f8;
+    color: #1f2937;
+}
+.container {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.edit-container {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    opacity: 0.9;
 }
 
 h1 {
@@ -42,6 +76,7 @@ ul {
     padding: 0;
     margin-top: 20px;
     width: 300px;
+    width: 100%;
 }
 
 li {
@@ -81,12 +116,10 @@ a.done-btn:hover {
 }
 
 .container {
-    max-width: 400px;
-    margin: 80px auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
 }
+
 
 .edit-form input {
     width: 100%;
@@ -191,3 +224,126 @@ body.dark .task-item {
     background: #1e1e1e;
     color: #f1f1f1;
 }
+
+.app-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+
+    background: #ffffff;
+    color: #222;
+
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+
+    transition: background 0.3s, color 0.3s;
+}
+/* ---------- DARK MODE ---------- */
+body.dark {
+    background: #0f0f0f;
+    color: #eaeaea;
+}
+
+body.dark .app-container {
+    background: #181818;
+    color: #eaeaea;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Task Cards ---------- */
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-card {
+    background: #f9f9fb;
+    color: #222;
+    padding: 14px 16px;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.task-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-text {
+    font-size: 16px;
+}
+
+.task-text.done {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.task-actions a {
+    margin-left: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body.dark .task-card {
+    background: #222;
+    color: #eaeaea;
+}
+
+body.dark .task-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+.back-link {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+.edit-container {
+    max-width: 420px;
+    padding: 30px;
+}
+
+/* Fix spacing inside edit form */
+.edit-container h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.edit-container .task-form {
+    display: flex;
+    gap: 12px;
+}
+
+.edit-container input[type="text"] {
+    flex: 1;
+}
+
+/* Dark mode toggle positioning fix */
+.edit-container .theme-toggle {
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+
